@@ -2,6 +2,10 @@
 
 > A library convert to anchor tag from text children as react component.
 
+- very tiny
+- simple usage
+- so simple
+
 - - -
 
 ## Instillation
@@ -12,7 +16,7 @@ $ npm i react-linkify
 
 ## Usage
 
-```
+```jsx
 import React from 'react'
 import linkify from 'react-linkify'
 
@@ -20,14 +24,16 @@ const Example: React.FC<{ children: string }> ({ children }) => (
   <p>{linkify(children)}</p>
 )
 
-<Example>
-  example: https://example.com
-</Example>
+const element = (
+  <Example>
+    example: https://example.com
+  </Example>
+)
 
 /*
  * got: ReactElement
  *   <p>
- *     <a href="https://example.com" / >
+ *     example: <a href="https://example.com">https://example.com</a>
  *   </p>
  */
 ```
