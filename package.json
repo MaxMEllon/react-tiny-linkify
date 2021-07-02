@@ -1,0 +1,45 @@
+{
+  "name": "react-linkify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p ./tsconfig.json",
+    "build:esm": "tsc -p ./tsconfig.esm.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MaxMEllon/react-linkfy.git"
+  },
+  "author": "maxmellon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaxMEllon/react-linkfy/issues"
+  },
+  "homepage": "https://github.com/MaxMEllon/react-linkfy#readme",
+  "dependencies": {
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.14.0",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-jest": "^27.0.3"
+  },
+  "peerDependencies": {
+    "@types/react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+  }
+}

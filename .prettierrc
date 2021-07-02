@@ -1,0 +1,9 @@
+semi: true
+tabWidth: 2
+trailingComma: all
+singleQuote: false
+bracketSpacing: true
+jsxBracketSameLine: true
+arrowParens: always
+endOfLine: lf
+parser: typescript
