@@ -11,7 +11,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
-    "importHelpers": true,
     "moduleResolution": "node"
   },
   "include": [
