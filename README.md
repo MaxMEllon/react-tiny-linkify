@@ -20,7 +20,7 @@ $ npm i react-linkify
 import React from 'react'
 import linkify from 'react-linkify'
 
-const Example: React.FC<{ children: string }> ({ children }) => (
+const Example: React.FC<{ children: string }> = ({ children }) => (
   <p>{linkify(children)}</p>
 )
 
