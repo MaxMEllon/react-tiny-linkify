@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest src",
     "fmt": "prettier src --write",
     "build": "npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -p ./tsconfig.json",

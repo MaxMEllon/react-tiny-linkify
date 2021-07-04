@@ -1,11 +1,12 @@
-import React from "react";
+import { Anchor as DefaultAnchor } from "./create-anchor";
 
 const regexp =
   /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
 
 export default function linkify(
   text: string,
-): React.ReactElement<{ children: React.ReactChild[] }> {
+  Anchor: React.VFC<{ key: string; url: string }> = DefaultAnchor,
+): React.ReactChild[] {
   let cursor = 0;
   const planeTextList = [];
   const urlList = [];
@@ -21,17 +22,9 @@ export default function linkify(
   for (let i = 0; i < planeTextList.length; i++) {
     result.push(planeTextList[i]);
     if (urlList[i]) {
-      result.push(
-        React.createElement(
-          "a",
-          {
-            key: `${i}-${urlList}`,
-            href: urlList[i],
-          },
-          urlList[i],
-        ),
-      );
+      const url = urlList[i];
+      result.push(Anchor({ url, key: `${i}-${url}` })!);
     }
   }
-  return React.createElement(React.Fragment, { children: result });
+  return result;
 }

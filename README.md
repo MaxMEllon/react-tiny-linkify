@@ -37,3 +37,14 @@ const element = (
  *   </p>
  */
 ```
+
+- with memo
+
+```jsx
+const Example: React.FC<{ content: string }> = ({ content }) => {
+  const linked = useMemo(() => linkify(content), [content])
+  return (
+    <p>{linked}</p>
+  )
+}
+```
