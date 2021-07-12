@@ -1,7 +1,7 @@
-import { Anchor as DefaultAnchor } from "./create-anchor";
+import { Anchor as DefaultAnchor } from "./components/anchor";
 
 const regexp =
-  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
 
 export default function linkify(
   text: string,
@@ -26,5 +26,6 @@ export default function linkify(
       result.push(Anchor({ url, key: `${i}-${url}` })!);
     }
   }
-  return result;
+  // exclude undefined
+  return result.filter((x) => x);
 }

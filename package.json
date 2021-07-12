@@ -1,14 +1,17 @@
 {
-  "name": "react-linkify",
+  "name": "react-tiny-linkify",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest src",
     "fmt": "prettier src --write",
+    "lint": "eslint src",
     "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc -p ./tsconfig.json",
-    "build:esm": "tsc -p ./tsconfig.esm.json"
+    "build:cjs": "tsc -d -p ./tsconfig.json",
+    "build:esm": "tsc -d -p ./tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
@@ -20,9 +23,6 @@
     "url": "https://github.com/MaxMEllon/react-linkfy/issues"
   },
   "homepage": "https://github.com/MaxMEllon/react-linkfy#readme",
-  "dependencies": {
-    "typescript": "^4.3.5"
-  },
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^15.14.0",
@@ -37,10 +37,10 @@
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "ts-jest": "^27.0.3"
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "@types/react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
   }
 }
