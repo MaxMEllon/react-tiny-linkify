@@ -1,6 +1,6 @@
 {
   "name": "react-tiny-linkify",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A library convert to anchor tag from text children as react component.",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -11,12 +11,17 @@
     "lint": "eslint src",
     "build": "npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -d -p ./tsconfig.json",
-    "build:esm": "tsc -d -p ./tsconfig.esm.json"
+    "build:esm": "tsc -d -p ./tsconfig.esm.json",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/MaxMEllon/react-linkfy.git"
   },
+  "files": [
+    "lib",
+    "esm"
+  ],
   "author": "maxmellon",
   "license": "MIT",
   "bugs": {
