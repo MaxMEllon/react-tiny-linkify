@@ -1,4 +1,4 @@
-# react-linkify
+# react-tiny-linkify
 
 > A library convert to anchor tag from text children as react component.
 
@@ -11,14 +11,14 @@
 ## Instillation
 
 ```
-$ npm i react-linkify
+$ npm i react-tiny-linkify
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react'
-import linkify from 'react-linkify'
+import linkify from 'react-tiny-linkify'
 
 const Example: React.FC<{ children: string }> = ({ children }) => (
   <p>{linkify(children)}</p>
