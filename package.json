@@ -1,7 +1,7 @@
 {
   "name": "react-tiny-linkify",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A library convert to anchor tag from text children as react component.",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",

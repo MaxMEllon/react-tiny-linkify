@@ -1,7 +1,7 @@
 import { Anchor as DefaultAnchor } from "./components/anchor";
 
 const regexp =
-  /https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9]{1,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
+  /https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9]{1,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g
 
 export default function linkify(
   text: string,
