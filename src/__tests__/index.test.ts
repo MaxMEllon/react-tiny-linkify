@@ -3,6 +3,9 @@ import assert from "assert";
 import ReactDOM from "react-dom/server";
 import linkfy from "../index";
 
+const txt = "xxx\nfaq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n"
+
+
 describe.each([
   [
     "sample http://google.com contents",
@@ -15,6 +18,18 @@ describe.each([
       },
       " contents",
     ],
+  ],
+  [
+    txt,
+    '<p>xxx\n<a href="https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx">https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx</a>\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n</p>',
+    [
+      "xxx\n",
+      {
+        href: "https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx",
+        children: "https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx"
+      },
+      "\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n"
+    ]
   ],
   [
     "💢 http://example.com 💢 http://example.com",
