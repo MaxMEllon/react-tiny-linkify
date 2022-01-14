@@ -20,6 +20,18 @@ describe.each([
     ],
   ],
   [
+    "sample HtTp://google.com contents",
+    '<p>sample <a href="HtTp://google.com">HtTp://google.com</a> contents</p>',
+    [
+      "sample ",
+      {
+        href: "HtTp://google.com",
+        children: "HtTp://google.com",
+      },
+      " contents",
+    ],
+  ],
+  [
     txt,
     '<p>xxx\n<a href="https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx">https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx</a>\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n</p>',
     [
