@@ -1,7 +1,7 @@
 import { Anchor as DefaultAnchor } from "./components/anchor";
 
 const regexp =
-  /(https?:\/\/)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9]{1,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g
+  /(https?:\/\/)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9]{1,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/ig
 
 export default function linkify(
   text: string,
@@ -23,7 +23,7 @@ export default function linkify(
   for (let i = 0; i < planeTextList.length; i++) {
     result.push(planeTextList[i]);
     if (urlList[i]) {
-      const url = urlList[i].includes("http") ? urlList[i] : `https://${urlList[i]}`
+      const url = /^https?:\/\//i.test(urlList[i]) ? urlList[i] : `https://${urlList[i]}`
       result.push(Anchor({ url, key: `${i}-${url}` })!);
     }
   }
