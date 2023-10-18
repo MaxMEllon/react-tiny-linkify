@@ -24,8 +24,6 @@ jobs:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules--${{ hashFiles('**/yarn.lock') }}--${{ hashFiles('**/package.json') }}
 
-    - run: npm config set scripts-prepend-node-path true
-
     - run: npm install
 
     - run: npm run build
