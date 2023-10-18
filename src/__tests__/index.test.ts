@@ -1,10 +1,10 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import assert from "assert";
 import ReactDOM from "react-dom/server";
 import linkfy from "../index";
 
-const txt = "xxx\nfaq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n"
-
+const txt =
+  "xxx\nfaq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n";
 
 describe.each([
   [
@@ -38,10 +38,10 @@ describe.each([
       "xxx\n",
       {
         href: "https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx",
-        children: "https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx"
+        children: "https://faq.xxxxxxxx.jp/xx/xx/xxxxxxxx/xxxxxxxxxxxx",
       },
-      "\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n"
-    ]
+      "\n\n\n--------\n\n[2021/03/24]　xxx\nyyy\n",
+    ],
   ],
   [
     "💢 http://example.com 💢 http://example.com",
@@ -68,15 +68,17 @@ describe.each([
         React.createElement("p", {}, linked),
       );
       assert.strictEqual(actual, expectedString);
-      linked.forEach((element, idx) => {
-        if (typeof element === "object") {
+      let idx = 0;
+      for (const element of linked) {
+        if (isValidElement(element)) {
           // anchor component case
           assert.deepStrictEqual(element.props, expectedProps[idx]);
         } else {
           // plane text case
           assert.strictEqual(element, expectedProps[idx]);
         }
-      });
+        idx++;
+      }
     });
   },
 );
